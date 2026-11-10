@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>SOVIS</title>
+<script>
+(function () {
+  var first = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0].toLowerCase();
+  location.replace('/' + (['about','android','windows','tech','research','news'].indexOf(first) >= 0 ? '#/' + first : ''));
+})();
+</script>
+</head>
+<body>
+<p><a href="/">SOVIS 홈으로 가기</a></p>
+</body>
+</html>

@@ -1,6 +1,0 @@
-dist/
-node_modules/
-.taste-skill/
-# 이 PC의 원본 영상 경로가 들어 있는 재료 생성 도구
-tools/media.py
-tools/brand.py
