@@ -1,6 +1,6 @@
 # SOVIS 웹사이트
 
-청각장애인을 위한 앱 [SoundVisualizer](https://github.com/bibibic76/SoundVisualizer)의 소개 사이트입니다. 프레임워크 없는 정적 사이트이고, 의존성이 없습니다.
+청각장애인을 위한 앱 [SoundVisualizer](https://github.com/SOVIS-Team/SoundVisualizer-Android)의 소개 사이트입니다. 프레임워크 없는 정적 사이트이고, 의존성이 없습니다.
 
 ```bash
 node build.mjs          # src 와 public 으로 dist/ 를 만든다
