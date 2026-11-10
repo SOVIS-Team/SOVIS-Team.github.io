@@ -1,0 +1,80 @@
+<!--{"title":"소개 | SOVIS","desc":"들리지 않는 소리 정보를 화면에 되돌려 놓는 팀, SOVIS. 우리가 걸어온 길과 만드는 사람들을 소개합니다.","path":"about/","nav":"about"}-->
+<section class="head head--y">
+  <div>
+    <h1 class="head__h">소리를 느끼게<br>만드는 팀, SOVIS</h1>
+    <p class="head__p">동국대학교 학생들이 만든 팀입니다. 자막이 전하지 못하는 소리를 화면과 진동으로 전합니다.</p>
+  </div>
+  <div class="head__pic"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/kind-speech.webp" src="{{root}}media/kind-speech.mp4" aria-label="노란색 테두리가 그려진 영화 장면, 앱에서 녹화한 화면"></video></div>
+</section>
+
+<section class="sec two">
+  <div><h2 class="h-l">누구를 위해 만드나요</h2></div>
+  <div class="feat feat--one">
+    <article class="rise"><h3>청각장애인의 미디어 접근성</h3><p>발소리, 사이렌처럼 대사가 아닌 소리의 방향과 종류를 시각 정보로 바꿔 영화와 드라마, 음악, 게임까지 더 온전히 즐길 수 있게 합니다.</p></article>
+    <article class="rise"><h3>일상의 주변 소리</h3><p>외부 사운드 모드를 켜면 화재경보나 사이렌, 누가 부르는 소리를 화면과 진동으로 알립니다.</p></article>
+    <article class="rise"><h3>소리를 켤 수 없는 환경</h3><p>지하철, 강의실, 새벽, 아이가 자는 방처럼 소리를 마음껏 들을 수 없을 때도 소리가 어디서 나는지 확인합니다.</p></article>
+  </div>
+</section>
+
+<section class="trio">
+  <img class="rise" src="{{root}}media/hands-1.webp" alt="손에 든 휴대폰으로 앱이 그려진 영화 화면을 보는 모습" width="1400" height="546" loading="lazy">
+  <img class="rise" src="{{root}}media/hands-2.webp" alt="책상 위에서 두 사람이 휴대폰으로 앱을 확인하는 손" width="1400" height="1050" loading="lazy">
+  <img class="rise" src="{{root}}media/street.webp" alt="길에서 휴대폰을 든 손, 화면 테두리가 빨갛게 그려진 장면" width="1280" height="534" loading="lazy">
+</section>
+
+<section class="sec sec--white">
+  <h2 class="h-l rise">우리가 걸어온 길</h2>
+  <ul class="line">
+    <li class="rise"><time>2026.03</time><p>공개SW프로젝트 수업에서 Windows 앱 개발 시작</p></li>
+    <li class="rise"><time>2026.05</time><p>농학교 아이디어 실증</p></li>
+    <li class="rise"><time>2026.06</time><p>Windows v1.0 공개, 소스 코드를 AGPL-3.0으로 공개</p></li>
+    <li class="rise"><time>2026.08</time><p>Windows v1.1 공개, 장애인 분야 해커톤 디지털 포용 분야 본선 진출</p></li>
+    <li class="rise"><time>2026.09</time><p>Android v1.0.0 공개, 해커톤 중간 개발물 제출</p></li>
+    <li class="rise"><time>2026.10</time><p>Android 외부 사운드 모드, Windows v2.0, 농학교 앱 실증, Android v1.8.0 공개</p></li>
+    <li class="rise"><time>2026.11</time><p>해커톤 본선</p></li>
+  </ul>
+</section>
+
+<section class="sec" id="team">
+  <h2 class="h-l rise">만드는 사람들</h2>
+  <div class="team">
+    <article class="person rise">
+      <div><h3>김도환</h3><p class="role">팀장, 개발, 디자인</p></div>
+      <dl>
+        <div><dt>Android</dt><dd>앱 구조와 소리 받기 서비스, 오버레이 그리기와 네 가지 표현 모드, 종류별 진동, 외부 사운드 모드, 잠금 화면 알림, 쉬운 설정, 분류 탭과 튜토리얼, 18개 언어, 시험과 배포</dd></div>
+        <div><dt>Windows</dt><dd>화면 위 오버레이와 표현 모드, 5.1과 7.1 채널 방향 표시, 런처와 설정, 단축키, 실시간 편집 화면. v2.0의 분류 탭과 튜토리얼, 화면 읽어주기 지원</dd></div>
+      </dl>
+    </article>
+    <article class="person rise">
+      <div><h3>박가람</h3><p class="role">AI</p></div>
+      <dl>
+        <div><dt>Android</dt><dd>Log-mel 전처리, YAMNet ONNX 추론, 세 종류 분류, 총소리 보조 모델을 기준 출력과 비교하는 시험과 함께 만들었습니다. Silero 음성 감지, 위협음 단서, 사람 소리 분류, 평가 도구와 0.25초 추론 간격</dd></div>
+        <div><dt>Windows</dt><dd>YAMNet 입력과 전처리, 소리를 세 종류로 나누는 규칙과 흔들림 방지, 음악과 효과음에 묻힌 총소리를 잡는 보조 모델, 7.1 채널 AI 입력</dd></div>
+      </dl>
+    </article>
+    <article class="person rise">
+      <div><h3>김성진</h3><p class="role">개발</p></div>
+      <dl>
+        <div><dt>Windows</dt><dd>시스템 소리를 받는 캡처 엔진 안정화, FFT 처리, 8채널을 2채널로 줄이는 라우팅과 다운믹스, 지연 시간 측정</dd></div>
+        <div><dt>Android</dt><dd>이슈와 PR 양식, 기여 안내, 브랜치 규칙 정리, 시각화를 멈출 때 진행 중인 AI 추론을 기다린 뒤 모델을 닫는 수정</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section class="sec sec--mid two" id="contact">
+  <div>
+    <h2 class="h-l">함께 만들어 주세요</h2>
+    <p class="lead">사용해 본 소감, 잘못 그려진 소리, 협력 제안 모두 반갑습니다.</p>
+    <p class="mailbox"><a class="h-m" href="mailto:nawwhod@gmail.com">nawwhod@gmail.com</a></p>
+    <p class="head__act">
+      <a class="btn btn--y" href="mailto:nawwhod@gmail.com">메일 보내기</a>
+      <button class="btn btn--w" type="button" data-copy="nawwhod@gmail.com">주소 복사</button>
+    </p>
+  </div>
+  <div class="feat feat--one">
+    <article class="rise"><h3>기관과 단체</h3><p>청각장애 당사자 사용성 시험이나 자문을 함께해 주실 곳을 찾고 있습니다.</p></article>
+    <article class="rise"><h3>사용하는 분</h3><p>잘못 구분된 소리나 불편한 점을 알려 주세요. 앱의 도움말 탭에서 기기 정보를 담아 바로 제보할 수 있습니다.</p></article>
+    <article class="rise"><h3>개발자</h3><p>두 앱의 소스 코드를 GitHub에 공개했습니다. 이슈와 제안을 환영합니다.</p></article>
+  </div>
+</section>

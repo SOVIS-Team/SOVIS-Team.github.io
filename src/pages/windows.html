@@ -1,0 +1,103 @@
+<!--{"title":"SoundVisualizer for Windows | SOVIS","desc":"컴퓨터에서 재생되는 모든 소리를 스테레오부터 7.1 채널까지 방향과 함께 화면 위에 그리는 Windows 앱. v2.0, 설치 없이 바로 실행합니다.","path":"windows/","nav":"windows","js":["overlay-core","stage"]}-->
+<section class="head head--w">
+  <div>
+    <h1 class="head__h">SoundVisualizer<br>for Windows</h1>
+    <p class="head__p">컴퓨터에서 재생되는 모든 소리를 받아, 스테레오부터 7.1 채널까지 소리의 방향을 화면 위에 그립니다.</p>
+    <p class="head__act">
+      <a class="btn btn--k" href="https://github.com/SOVIS-Team/SoundVisualizer-Windows/releases/latest" rel="noopener">ZIP 받기</a>
+      <a class="btn btn--y" href="https://github.com/SOVIS-Team/SoundVisualizer-Windows" rel="noopener">소스 코드</a>
+    </p>
+    <p class="head__meta">v2.0, 2026.10.15 공개. Windows 10, 11 64비트. AGPL-3.0.</p>
+  </div>
+  <div class="head__note">
+    <p class="lead">설치 없이 압축을 풀고 바로 실행합니다. 영상과 음악, 게임, 화상회의까지 어떤 화면 위에서든 소리를 봅니다.</p>
+  </div>
+</section>
+
+<section class="sec compass" data-stage data-out="8" data-kind="none" data-preview="horn">
+  <div class="compass__say rise">
+    <h2 class="h-l">여덟 방향으로 봅니다</h2>
+    <p class="lead">5.1, 7.1 출력이면 앞뒤와 옆까지 구분합니다.</p>
+    <p>방향을 선택해 보세요. 그 방향의 가장자리가 차오릅니다. 소리가 실제로 재생됩니다.</p>
+    <p class="compass__now" aria-live="polite"><span data-now-kind>소리 없음</span> <span data-now-dir></span></p>
+    <div class="dial" data-ui role="group" aria-label="소리 방향">
+      <button type="button" data-angle="315" aria-pressed="false">왼쪽 위</button>
+      <button type="button" data-angle="0" aria-pressed="false">위</button>
+      <button type="button" data-angle="45" aria-pressed="false">오른쪽 위</button>
+      <button type="button" data-angle="270" aria-pressed="false">왼쪽</button>
+      <span class="dial__mid"></span>
+      <button type="button" data-angle="90" aria-pressed="true">오른쪽</button>
+      <button type="button" data-angle="225" aria-pressed="false">왼쪽 아래</button>
+      <button type="button" data-angle="180" aria-pressed="false">아래</button>
+      <button type="button" data-angle="135" aria-pressed="false">오른쪽 아래</button>
+    </div>
+  </div>
+  <div class="stage__area stage__area--wide rise" data-ui data-area>
+    <img src="{{root}}media/hero-poster.webp" alt="" width="1600" height="667" loading="lazy">
+    <canvas aria-hidden="true"></canvas>
+    <span class="stage__mark" data-marker></span>
+  </div>
+</section>
+
+<section class="sec sec--mid">
+  <h2 class="h-l rise">네 가지 표현 모드</h2>
+  <div class="modes">
+    <figure class="rise"><div class="modes__pic"><img src="{{root}}media/still-1.webp" alt="" width="960" height="400" loading="lazy"><canvas data-mini="0" data-size="62" aria-hidden="true"></canvas></div><figcaption><b>파도</b> 가장자리를 따라 소리 세기만큼 차오릅니다.</figcaption></figure>
+    <figure class="rise"><div class="modes__pic"><img src="{{root}}media/still-2.webp" alt="" width="960" height="400" loading="lazy"><canvas data-mini="1" data-size="62" aria-hidden="true"></canvas></div><figcaption><b>패드</b> 여덟 곳에 고정된 패드로 방향을 보여 줍니다.</figcaption></figure>
+    <figure class="rise"><div class="modes__pic"><img src="{{root}}media/still-3.webp" alt="" width="960" height="400" loading="lazy"><canvas data-mini="2" data-size="62" aria-hidden="true"></canvas></div><figcaption><b>원형</b> 가운데 고리가 소리 쪽으로 부풀어 오릅니다.</figcaption></figure>
+    <figure class="rise"><div class="modes__pic"><img src="{{root}}media/still-4.webp" alt="" width="960" height="400" loading="lazy"><canvas data-mini="3" data-size="62" aria-hidden="true"></canvas></div><figcaption><b>외곽선</b> 테두리만 남겨 화면을 가장 적게 가립니다.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec sec--white">
+  <h2 class="h-l rise">v2.0에 담긴 것</h2>
+  <div class="feat">
+    <article class="rise"><h3>7.1 채널까지 방향 인식</h3><p>스테레오, 5.1, 7.1 출력 구성을 자동으로 알아보고 각 채널을 제자리에 그립니다. 출력 장치가 바뀌면 그 장치에 맞춰집니다.</p></article>
+    <article class="rise"><h3>AI 소리 분류</h3><p>소리를 환경음, 대화음, 위협음으로 나눠 색으로 보여 줍니다. 5.1, 7.1 환경에서는 뒤쪽과 옆쪽 채널의 소리도 AI가 듣습니다.</p></article>
+    <article class="rise"><h3>네 가지 표현 모드</h3><p>파도, 패드, 원형, 외곽선 가운데 선택합니다. 30 FPS부터 모니터 주사율까지, 최대 프레임을 얼마로 두어도 그림이 같은 빠르기로 움직입니다.</p></article>
+    <article class="rise"><h3>보던 화면을 내리지 않는 단축키</h3><p>F2로 사운드 모드, F3로 표현 모드를 바로 바꿉니다. 단축키는 설정 탭에서 원하는 키 조합으로 바꿀 수 있습니다.</p></article>
+    <article class="rise"><h3>편집 모드</h3><p>F4를 누르면 화면에 경계선이 나타나고, 끌어서 그려지는 영역의 크기와 한계를 조절합니다. 색과 진하기도 패널에서 바로 바꿉니다.</p></article>
+    <article class="rise"><h3>소리마다 종류 정하기</h3><p>AI가 알아듣는 소리 521개를 Android 버전과 같은 묶음으로 보여 주고, 묶음마다 어느 종류로 볼지 선택합니다.</p></article>
+    <article class="rise"><h3>키보드와 화면 읽어주기</h3><p>런처의 모든 칸에 Tab 키로 닿고, Ctrl + Tab으로 탭을 옮기며, Esc로 창을 닫습니다. 내레이터와 NVDA가 버튼과 상태를 읽어 줍니다.</p></article>
+    <article class="rise"><h3>튜토리얼과 18개 언어</h3><p>처음 열면 실제 그리기 엔진으로 쓰는 법을 보여 줍니다. 처음에는 Windows 표시 언어를 따릅니다.</p></article>
+  </div>
+</section>
+
+<section class="sec two" id="install">
+  <div>
+    <h2 class="h-l">설치 없이 바로 실행</h2>
+    <p class="lead">.NET을 따로 설치하지 않아도 됩니다.</p>
+    <p class="head__act"><a class="btn btn--y" href="https://github.com/SOVIS-Team/SoundVisualizer-Windows/releases/latest" rel="noopener">ZIP 받기</a></p>
+  </div>
+  <ol class="steps">
+    <li><span>GitHub Releases에서 <code>SoundVisualizer_v2.0.zip</code>을 받아 원하는 곳에 압축을 풉니다.</span></li>
+    <li><span>폴더 안의 <code>SoundVisualizer.exe</code>를 실행합니다.</span></li>
+    <li><span>Windows의 PC 보호 창이 뜨면 추가 정보를 누른 뒤 실행을 누릅니다.</span></li>
+    <li><span>런처에서 언어와 초기 설정을 마친 뒤 실행을 누르면 오버레이가 켜집니다.</span></li>
+    <li><span>설정은 실행 파일 옆 <code>settings.json</code>에 저장되므로, 폴더를 그대로 옮겨도 됩니다.</span></li>
+  </ol>
+</section>
+
+<section class="sec faq sec--mid" data-faq>
+  <div class="faq__list">
+    <h2 class="faq__h">Windows 앱 질문</h2>
+    <ul>
+      <li><button type="button" data-q aria-expanded="false"><i></i>앞뒤 방향도 알 수 있나요?</button>
+        <div data-a><p>5.1, 7.1 채널로 출력하면 앞뒤와 옆까지 구분합니다. 스테레오 출력은 왼쪽과 오른쪽만 구분하고, 좌우에 함께 있는 소리는 화면 위쪽에 그립니다.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>전체 화면 앱에서 그림이 보이지 않아요.</button>
+        <div data-a><p>독점 전체 화면 모드로 도는 앱이라면 테두리 없는 창 모드나 창 모드로 바꿔 보세요. 소리가 Windows 기본 출력 장치로 나오고 있는지도 확인해 주세요.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>그림이 잘 반응하지 않아요.</button>
+        <div data-a><p>앱 안이나 Windows 볼륨 믹서에서 그 앱의 볼륨을 아주 낮추거나 음소거하면 소리가 거의 보이지 않을 수 있습니다. 소리를 조금 키우거나 설정 탭에서 민감도를 올려 보세요.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>키보드나 화면 읽어주기로 쓸 수 있나요?</button>
+        <div data-a><p>네. 런처의 모든 칸에 Tab 키로 닿고, Ctrl + Tab으로 다음 탭으로 갑니다. 아이콘 버튼과 소리 목록은 화면 읽어주기가 이름으로 읽고, 마우스로 끄는 값은 패널의 슬라이더로도 바꿀 수 있습니다.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>설치해야 하나요?</button>
+        <div data-a><p>아니요. 압축을 풀고 SoundVisualizer.exe를 실행하면 됩니다.</p></div></li>
+    </ul>
+  </div>
+  <div class="faq__pane" data-pane aria-live="polite"></div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">Android 버전과 비교</h2>
+  <div class="tbl-wrap rise">{{compare}}</div>
+</section>

@@ -1,0 +1,18 @@
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="bar">
+  <a class="bar__mark" href="{{root}}./" aria-label="SOVIS 홈">
+    <img src="{{root}}icons/mark.svg" alt="" width="28" height="28">
+    <span>SOVIS</span>
+  </a>
+  <nav id="nav" class="bar__nav" aria-label="주요 메뉴">
+    <a href="{{root}}android/" {{active:android}}>Android</a>
+    <a href="{{root}}windows/" {{active:windows}}>Windows</a>
+    <a href="{{root}}demo/" {{active:demo}}>체험</a>
+    <a href="{{root}}tech/" {{active:tech}}>기술</a>
+    <a href="{{root}}research/" {{active:research}}>실증</a>
+    <a href="{{root}}news/" {{active:news}}>소식</a>
+    <a href="{{root}}about/" {{active:about}}>소개</a>
+  </nav>
+  <button class="bar__motion" type="button" data-motion aria-pressed="false">영상 멈추기</button>
+  <button class="bar__menu" type="button" data-menu aria-expanded="false" aria-controls="nav">메뉴</button>
+</header>

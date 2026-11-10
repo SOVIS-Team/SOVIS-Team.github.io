@@ -1,0 +1,76 @@
+<!--{"title":"기술 | SoundVisualizer","desc":"소리를 받아 방향과 세기를 계산하고, 기기 안의 AI가 종류를 구분해 화면에 그리기까지. 정확도와 성능 수치를 공개합니다.","path":"tech/","nav":"tech","js":["overlay-core"]}-->
+<section class="head">
+  <div>
+    <h1 class="head__h">소리를 눈으로<br>보기까지</h1>
+    <p class="head__p">기기에서 재생되는 소리를 받아 네 단계를 거쳐 화면에 그립니다. 모든 계산은 기기 안에서 끝납니다.</p>
+  </div>
+  <div class="head__pic"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-circle.webp" src="{{root}}media/mode-circle.mp4" aria-label="원형 모드가 영화 장면 위에 그려지는 앱 녹화 영상"></video></div>
+</section>
+
+<section class="sec sec--mid">
+  <h2 class="h-l rise">네 단계</h2>
+  <div class="feat">
+    <article class="rise"><h3>재생 중인 소리 받기</h3><p>휴대폰과 컴퓨터에서 재생 중인 소리를 그대로 받습니다. 앱마다 따로 연동할 필요가 없습니다. Android의 외부 사운드 모드는 마이크로 주변 소리를 받습니다.</p></article>
+    <article class="rise"><h3>방향과 세기 계산</h3><p>채널마다 소리 크기를 재고 비교합니다. Windows는 2.0, 5.1, 7.1 채널을 스스로 알아보고, Android는 왼쪽과 오른쪽을 구분합니다.</p></article>
+    <article class="rise"><h3>AI 소리 분류</h3><p>0.25초마다 최근 약 1초의 소리를 16kHz 모노 Log-mel로 바꿔, YAMNet 기반 ONNX 모델이 521가지 소리를 듣고 세 종류로 나눕니다. Android는 Silero 음성 감지가 사람 소리를 먼저 찾아 표시합니다.</p></article>
+    <article class="rise"><h3>화면 위에 그리기</h3><p>세기는 크기로, 방향은 위치로, 종류는 색으로 그립니다. 보던 화면은 그대로 두고, Android는 진동으로도 알립니다.</p></article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">화면을 가리지 않는 네 가지 표현</h2>
+  <div class="modes">
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-wave.webp" src="{{root}}media/mode-wave.mp4" aria-label="파도 모드 앱 녹화 영상"></video><figcaption><b>파도</b> 화면 가장자리를 따라 소리 세기만큼 차오릅니다. 방향과 세기를 함께 읽습니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-pad.webp" src="{{root}}media/mode-pad.mp4" aria-label="패드 모드 앱 녹화 영상"></video><figcaption><b>패드</b> 가장자리 여덟 곳에 고정된 패드로 표현합니다. 화면을 덜 가립니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-circle.webp" src="{{root}}media/mode-circle.mp4" aria-label="원형 모드 앱 녹화 영상"></video><figcaption><b>원형</b> 화면 가운데의 고리가 소리가 나는 쪽으로 부풀어 오릅니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-outline.webp" src="{{root}}media/mode-outline.mp4" aria-label="외곽선 모드 앱 녹화 영상"></video><figcaption><b>외곽선</b> 파도의 테두리만 남깁니다. 화면을 가장 적게 가립니다.</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec sec--white two">
+  <div>
+    <h2 class="h-l">83.72%</h2>
+    <p class="lead">v1.8.0의 소리 종류 구분 정확도입니다. 첫 공개 버전의 56.98%에서 26.74%p 올랐습니다.</p>
+    <p class="stack__gap">Macro F1 85.68%. 기기 밖에서 평가용 소리 파일로 측정했고, 파일별 다수결로 계산했으며 기침과 재채기는 제외했습니다.</p>
+  </div>
+  <div>
+    <h3 class="h-m">소리 종류별 정확도</h3>
+    <div class="bars" role="img" aria-label="v1.0.0과 v1.8.0의 정확도. 환경음 45.68%에서 92.59%, 말소리와 대화 90.00%에서 100%, 위협음 64.20%에서 72.84%">
+      <div class="bars__row"><b>환경음</b><div class="bars__set"><span class="bar-v" style="--v:45.68"><i></i>45.68%</span><span class="bar-v bar-v--now" style="--v:92.59"><i></i>92.59%</span></div></div>
+      <div class="bars__row"><b>말소리와 대화</b><div class="bars__set"><span class="bar-v" style="--v:90"><i></i>90.00%</span><span class="bar-v bar-v--now" style="--v:100"><i></i>100%</span></div></div>
+      <div class="bars__row"><b>위협음</b><div class="bars__set"><span class="bar-v" style="--v:64.2"><i></i>64.20%</span><span class="bar-v bar-v--now" style="--v:72.84"><i></i>72.84%</span></div></div>
+    </div>
+    <p class="bars__key bars__key--light"><span><i></i>v1.0.0</span><span><i></i>v1.8.0</span></p>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">v1.0.0 뒤 달라진 것</h2>
+  <div class="tbl-wrap rise">
+    <table class="tbl">
+      <caption>중간 제출본 v1.0.0과 v1.8.0 비교 (Android)</caption>
+      <thead><tr><th scope="col">항목</th><th scope="col">v1.0.0</th><th scope="col">v1.8.0</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">AI 분류 결과 갱신 간격 (중앙값)</th><td>약 273ms</td><td>250ms</td></tr>
+        <tr><th scope="row">소리가 날 때 그리기 부하 (파도 모드, 한 코어 기준)</th><td>68%</td><td>45%</td></tr>
+        <tr><th scope="row">소리 종류 직접 지정</th><td>없음</td><td>소리 521개 (37개 묶음)</td></tr>
+        <tr><th scope="row">처음 쓰는 사람을 위한 안내</th><td>없음</td><td>튜토리얼 5쪽, 도움말 9개 주제</td></tr>
+        <tr><th scope="row">화면 언어</th><td>한국어</td><td>18개 언어</td></tr>
+        <tr><th scope="row">자동화 시험 (유닛 / 기기)</th><td>81개 / 3개</td><td>822개 / 100개</td></tr>
+        <tr><th scope="row">설치 파일 크기</th><td>약 77MB (디버그 빌드)</td><td>약 38MB (릴리스 빌드)</td></tr>
+      </tbody>
+    </table>
+    <p class="tbl-note">간격과 부하는 개선 직전과 직후 코드를 Galaxy S25+에서 비교한 값입니다.</p>
+  </div>
+</section>
+
+<section class="sec sec--mid">
+  <h2 class="h-l rise">소리를 다루는 앱이라 더 조심합니다</h2>
+  <div class="feat">
+    <article class="rise"><h3>AI가 틀릴 수 있다고 전제합니다</h3><p>방향과 세기는 AI와 별개로 계산해 항상 보여 주고, 사이렌이나 경보처럼 놓치면 안 되는 소리는 더 쉽게 위협음으로 잡습니다. 안전이 걸린 상황에서는 이 앱을 유일한 수단으로 쓰지 마세요.</p></article>
+    <article class="rise"><h3>보던 화면을 그대로 둡니다</h3><p>그림은 다른 앱 위에 투명하게 떠서 주로 화면 가장자리에 그려집니다. 모드와 크기, 진하기를 바꿔 화면을 얼마나 가릴지 직접 정합니다.</p></article>
+    <article class="rise"><h3>소리 종류는 내가 정합니다</h3><p>521가지 소리를 37개 묶음으로 보여 주고, 묶음마다 무엇으로 볼지 정합니다. 색도 바꿀 수 있고, Android에서는 진동도 정합니다.</p></article>
+    <article class="rise"><h3>소리는 기기 밖으로 나가지 않습니다</h3><p>소리를 파일로 남기거나 서버로 보내지 않고, 인터넷 없이도 동작합니다.</p></article>
+  </div>
+  <p class="head__act rise"><a class="btn btn--y" href="{{root}}demo/">직접 체험하기</a></p>
+</section>

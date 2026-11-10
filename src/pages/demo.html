@@ -1,0 +1,73 @@
+<!--{"title":"체험하기 | SoundVisualizer","desc":"소리와 위치를 선택하면 SoundVisualizer와 같은 계산으로 화면 가장자리에 그려 줍니다. 브라우저에서 바로 체험하세요.","path":"demo/","nav":"demo","js":["overlay-core","stage"]}-->
+<section class="stage" data-stage data-out="2" data-kind="none" data-preview="siren">
+  <div class="stage__area" data-ui data-area data-press role="application" aria-label="소리 체험 화면. 눌러서 소리가 날 위치를 정합니다.">
+    <video data-loop muted loop playsinline preload="none" poster="{{root}}media/hero-poster.webp" src="{{root}}media/hero-1280.mp4" aria-hidden="true"></video>
+    <canvas aria-hidden="true"></canvas>
+    <span class="stage__mark" data-marker></span>
+    <p class="stage__now"><span class="cap"><i data-now-dot></i><span data-now-kind>소리 없음</span> <span data-now-dir></span></span></p>
+  </div>
+  <div class="stage__side">
+    <h1 class="h-l">소리를 눌러 보세요</h1>
+    <p class="stage__lead">소리를 선택하고 위 화면을 누르면 그 위치에서 소리가 납니다. 누른 채 움직이면 위치가 따라옵니다. 소리가 실제로 재생되니 볼륨을 확인해 주세요.</p>
+    <div class="stage__ctrl" data-ui>
+      <div class="stage__group">
+        <p class="frag__t" id="s-sound">소리</p>
+        <div class="stage__sounds" role="radiogroup" aria-labelledby="s-sound">
+          <button type="button" role="radio" aria-checked="false" data-sound-id="brook"><i class="swatch"></i>시냇물</button>
+          <button type="button" role="radio" aria-checked="false" data-sound-id="step"><i class="swatch"></i>발소리</button>
+          <button type="button" role="radio" aria-checked="false" data-sound-id="talk"><i class="swatch swatch--y"></i>말소리</button>
+          <button type="button" role="radio" aria-checked="false" data-sound-id="call"><i class="swatch swatch--y"></i>부르는 소리</button>
+          <button type="button" role="radio" aria-checked="true" data-sound-id="siren"><i class="swatch swatch--r"></i>사이렌</button>
+          <button type="button" role="radio" aria-checked="false" data-sound-id="horn"><i class="swatch swatch--r"></i>경적</button>
+        </div>
+      </div>
+      <div class="stage__group">
+        <p class="frag__t" id="s-mode">표현 모드</p>
+        <div class="seg" role="radiogroup" aria-labelledby="s-mode" data-pick data-stage-mode>
+          <button type="button" role="radio" aria-checked="true" data-value="0">파도</button>
+          <button type="button" role="radio" aria-checked="false" data-value="1">패드</button>
+          <button type="button" role="radio" aria-checked="false" data-value="2">원형</button>
+          <button type="button" role="radio" aria-checked="false" data-value="3">외곽선</button>
+        </div>
+        <p class="frag__t stage__mt" id="s-out">방향</p>
+        <div class="seg seg--2" role="radiogroup" aria-labelledby="s-out" data-pick data-stage-out>
+          <button type="button" role="radio" aria-checked="true" data-value="2">왼쪽과 오른쪽 (휴대폰)</button>
+          <button type="button" role="radio" aria-checked="false" data-value="8">여덟 방향 (Windows 7.1)</button>
+        </div>
+      </div>
+      <div class="stage__group">
+        <label class="stage__set">크기 <output>50</output><input type="range" min="10" max="100" step="1" value="50" data-set="size"></label>
+        <label class="stage__set">진하기 <output>50</output><input type="range" min="10" max="100" step="1" value="50" data-set="opacity"></label>
+        <label class="stage__set">민감도 <output>15</output><input type="range" min="1" max="100" step="1" value="15" data-set="sensitivity"></label>
+        <div class="stage__btns">
+          <button type="button" data-auto aria-pressed="false">자동 시연</button>
+          <button type="button" data-mute aria-pressed="false">소리 끄기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec two sec--mid">
+  <div>
+    <h2 class="h-l">실제 앱에서는</h2>
+  </div>
+  <div class="stack">
+    <p class="lead">휴대폰과 컴퓨터에서 재생되는 소리를 앱이 직접 받습니다. 위치를 정할 필요 없이 어떤 앱의 소리든 바로 그려집니다.</p>
+    <p>Android는 왼쪽과 오른쪽을, Windows는 7.1 출력에서 앞뒤와 옆까지 구분합니다. 소리의 종류는 기기 안의 AI가 정합니다.</p>
+    <p class="head__act">
+      <a class="btn btn--y" href="{{root}}android/">Android 앱 보기</a>
+      <a class="btn btn--w" href="{{root}}windows/">Windows 앱 보기</a>
+    </p>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">앱에서 녹화한 장면</h2>
+  <div class="modes">
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-wave.webp" src="{{root}}media/mode-wave.mp4" aria-label="파도 모드 앱 녹화 영상"></video><figcaption><b>파도</b> 화면 가장자리를 따라 소리 세기만큼 차오릅니다. 방향과 세기를 함께 읽습니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-pad.webp" src="{{root}}media/mode-pad.mp4" aria-label="패드 모드 앱 녹화 영상"></video><figcaption><b>패드</b> 가장자리 여덟 곳에 고정된 패드로 표현합니다. 화면을 덜 가립니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-circle.webp" src="{{root}}media/mode-circle.mp4" aria-label="원형 모드 앱 녹화 영상"></video><figcaption><b>원형</b> 화면 가운데의 고리가 소리가 나는 쪽으로 부풀어 오릅니다.</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-outline.webp" src="{{root}}media/mode-outline.mp4" aria-label="외곽선 모드 앱 녹화 영상"></video><figcaption><b>외곽선</b> 파도의 테두리만 남깁니다. 화면을 가장 적게 가립니다.</figcaption></figure>
+  </div>
+</section>

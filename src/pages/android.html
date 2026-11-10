@@ -1,0 +1,101 @@
+<!--{"title":"SoundVisualizer for Android | SOVIS","desc":"휴대폰에서 재생되는 소리와 주변 소리를 화면 테두리와 진동으로 알려 주는 Android 앱. v1.8.0, Android 10 이상.","path":"android/","nav":"android"}-->
+<section class="head head--y head--phone">
+  <div>
+    <h1 class="head__h">SoundVisualizer<br>for Android</h1>
+    <p class="head__p">휴대폰의 소리와 주변 소리를 화면 테두리에 그리고, 소리 종류마다 다른 진동으로 알립니다.</p>
+    <p class="head__act">
+      <a class="btn btn--k" href="https://github.com/bibibic76/SoundVisualizer/releases/latest" rel="noopener">APK 받기</a>
+      <a class="btn btn--w" href="https://github.com/bibibic76/SoundVisualizer" rel="noopener">소스 코드</a>
+    </p>
+    <p class="head__meta">v1.8.0, 2026.10.22 공개. Android 10 이상. Apache-2.0.</p>
+  </div>
+  <div class="head__pic head__pic--phone">
+    <video data-loop muted loop playsinline preload="none" poster="{{root}}media/ui-easy.webp" src="{{root}}media/ui-easy.mp4" aria-label="앱의 쉬운 설정 화면에서 모양과 크기를 선택하는 녹화 영상"></video>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">네 가지 표현 모드</h2>
+  <div class="switcher rise" data-switcher>
+    <div class="switcher__bar" role="radiogroup" aria-label="표현 모드" data-pick>
+      <button type="button" role="radio" aria-checked="true" data-value="wave" data-src="{{root}}media/mode-wave.mp4" data-poster="{{root}}media/mode-wave.webp" data-text="화면 가장자리를 따라 소리 세기만큼 차오릅니다. 방향과 세기를 함께 읽을 수 있습니다.">파도</button>
+      <button type="button" role="radio" aria-checked="false" data-value="pad" data-src="{{root}}media/mode-pad.mp4" data-poster="{{root}}media/mode-pad.webp" data-text="가장자리 여덟 곳에 고정된 패드로 표현합니다. 화면을 덜 가리면서 방향을 보여 줍니다.">패드</button>
+      <button type="button" role="radio" aria-checked="false" data-value="circle" data-src="{{root}}media/mode-circle.mp4" data-poster="{{root}}media/mode-circle.webp" data-text="화면 가운데의 고리가 소리가 나는 쪽으로 부풀어 오릅니다. 시선을 가운데에 둔 채 방향을 읽습니다.">원형</button>
+      <button type="button" role="radio" aria-checked="false" data-value="outline" data-src="{{root}}media/mode-outline.mp4" data-poster="{{root}}media/mode-outline.webp" data-text="파도의 테두리만 남깁니다. 네 모드 가운데 화면을 가장 적게 가립니다.">외곽선</button>
+    </div>
+    <video data-loop muted loop playsinline preload="none" poster="{{root}}media/mode-wave.webp" src="{{root}}media/mode-wave.mp4" aria-label="선택한 표현 모드가 영화 장면 위에 그려지는 앱 녹화 영상"></video>
+    <p class="switcher__cap" data-cap aria-live="polite">화면 가장자리를 따라 소리 세기만큼 차오릅니다. 방향과 세기를 함께 읽을 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="sec sec--mid">
+  <h2 class="h-l rise">소리가 나는 쪽이 더 크게</h2>
+  <p class="lead wide rise">휴대폰에서 재생되는 소리의 왼쪽과 오른쪽을 비교해 소리가 나는 쪽과 크기를 그립니다.</p>
+  <div class="pair">
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/dir-left.webp" src="{{root}}media/dir-left.mp4" aria-label="왼쪽 테두리가 더 크게 그려지는 앱 녹화 영상"></video><figcaption>왼쪽에서 나는 소리</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/dir-right.webp" src="{{root}}media/dir-right.mp4" aria-label="오른쪽 테두리가 더 크게 그려지는 앱 녹화 영상"></video><figcaption>오른쪽에서 나는 소리</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec sec--white">
+  <h2 class="h-l rise">v1.8.0에 담긴 것</h2>
+  <div class="feat">
+    <article class="rise"><h3>쉬운 설정</h3><p>움직이는 그림 카드에서 모양을, 세 단계로 크기를, 소리 종류마다 표시 여부와 진동 세기를 선택합니다. 나머지는 자세한 설정에 있습니다.</p></article>
+    <article class="rise"><h3>AI 소리 분류</h3><p>소리를 환경음, 사람 소리, 위협음으로 나눠 색으로 보여 줍니다. 사이렌, 경보, 폭발음, 경적은 음악이나 게임 소리에 묻혀도 놓치지 않도록 더 쉽게 위협음으로 봅니다.</p></article>
+    <article class="rise"><h3>소리마다 종류 정하기</h3><p>AI가 알아듣는 소리 521개를 37개 묶음으로 보여 주고, 묶음마다 어느 종류로 볼지 선택합니다. 고급 모드에서는 소리마다 정합니다.</p></article>
+    <article class="rise"><h3>종류별 진동</h3><p>꺼짐, 느림, 중간, 빠름, 연속 가운데 방식을, 10~100%로 세기를 정합니다. 처음에는 위협음만 중간으로 켜져 있습니다.</p></article>
+    <article class="rise"><h3>외부 사운드 모드</h3><p>휴대폰 소리 대신 마이크로 주변 소리를 듣고 같은 그림과 진동으로 알립니다. 마이크 감도는 16단계, 최대 32배입니다. 이 모드에서는 방향을 표시하지 않습니다.</p></article>
+    <article class="rise"><h3>잠금 화면 알림</h3><p>폰이 잠겨 있는 동안 위협음이 들리면 잠금 화면에 알리고 화면을 잠깐 켭니다. 소리는 나지 않습니다.</p></article>
+    <article class="rise"><h3>보던 화면을 나가지 않는 제어</h3><p>실행 중 알림에서 시각화를 끄거나 표현 모드를 바꾸고, 빠른 설정 타일로 앱을 열지 않고 켜고 끕니다.</p></article>
+    <article class="rise"><h3>튜토리얼과 18개 언어</h3><p>처음 열면 실제 그리기 엔진과 실제 진동으로 쓰는 법을 보여 줍니다. 도움말 탭에서 바로 제보할 수 있습니다.</p></article>
+  </div>
+</section>
+
+<section class="sec">
+  <h2 class="h-l rise">앱 화면</h2>
+  <div class="tall">
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/ui-easy.webp" src="{{root}}media/ui-easy.mp4" aria-label="쉬운 설정 화면 녹화 영상"></video><figcaption>쉬운 설정</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/ui-detail.webp" src="{{root}}media/ui-detail.mp4" aria-label="자세한 설정 화면 녹화 영상"></video><figcaption>자세한 설정</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/ui-classify.webp" src="{{root}}media/ui-classify.mp4" aria-label="분류 탭 화면 녹화 영상"></video><figcaption>분류 탭</figcaption></figure>
+    <figure class="rise"><video data-loop muted loop playsinline preload="none" poster="{{root}}media/ui-color.webp" src="{{root}}media/ui-color.mp4" aria-label="색상 설정 화면 녹화 영상"></video><figcaption>소리 종류별 색</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec sec--yellow two" id="install">
+  <div>
+    <h2 class="h-l">설치하고 켜는 방법</h2>
+    <p class="lead">Android 10 이상 휴대폰에서 APK 파일로 설치합니다.</p>
+    <p class="head__act"><a class="btn btn--k" href="https://github.com/bibibic76/SoundVisualizer/releases/latest" rel="noopener">APK 받기</a></p>
+  </div>
+  <ol class="steps">
+    <li><span>휴대폰으로 GitHub Releases에 들어가 <code>SoundVisualizer-v1.8.0.apk</code>를 받아 엽니다.</span></li>
+    <li><span>알 수 없는 앱 설치를 허용할지 물으면 허용하고 설치합니다. 갤럭시(One UI 6 이상)는 보안 위험 자동 차단을 잠시 끄고 설치한 뒤 다시 켜 주세요.</span></li>
+    <li><span>앱을 열면 튜토리얼이 먼저 뜹니다. 홈에서 실행을 누르고 다른 앱 위에 표시, 마이크, 화면 녹화 권한을 허용합니다.</span></li>
+    <li><span>소리가 나는 앱을 켜면 화면 테두리에 소리가 그려집니다. 끌 때는 홈의 실행 종료나 알림의 중지를 누릅니다.</span></li>
+    <li><span>주변 소리를 들으려면 실행하기 전에 홈의 외부 사운드 모드 스위치를 켭니다. 실행 중에는 바꿀 수 없습니다.</span></li>
+  </ol>
+</section>
+
+<section class="sec faq" data-faq>
+  <div class="faq__list">
+    <h2 class="faq__h">Android 앱 질문</h2>
+    <ul>
+      <li><button type="button" data-q aria-expanded="false"><i></i>왜 화면 녹화와 마이크 권한을 묻나요?</button>
+        <div data-a><p>안드로이드는 휴대폰 안에서 재생되는 소리를 다른 앱에 넘겨줄 때 이 두 권한을 요구합니다. 소리만 쓰고 화면은 캡처하지 않으며, 외부 사운드 모드를 켜지 않으면 주변 소리도 듣지 않습니다. Android 14 이상에서 공유 범위를 물으면 전체 화면 공유를 선택해 주세요.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>어떤 앱에서 쓸 수 있나요?</button>
+        <div data-a><p>유튜브, OTT, 음악, 게임처럼 소리를 내는 대부분의 앱에서 씁니다. 소리 캡처를 막아 둔 일부 앱은 그려지지 않고, 통화 소리와 알림음, 알람은 받지 않습니다. 미디어 볼륨이 0이면 소리를 받지 못하니, 소리를 내지 않고 쓰려면 이어폰을 연결해 두세요.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>주변 소리도 알려 주나요?</button>
+        <div data-a><p>외부 사운드 모드를 켜면 마이크로 주변 소리를 듣고 같은 그림과 진동으로 알립니다. 이 모드에서는 방향을 표시하지 않고, 통화 중이거나 다른 앱이 마이크를 쓰는 동안에는 소리를 받지 못합니다.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>화면이 꺼져 있어도 알려 주나요?</button>
+        <div data-a><p>휴대폰 소리를 볼 때는 기본 설정에서 화면이 꺼지면 쉽니다. 설정의 배터리에서 화면이 꺼지면 일시정지를 끄면 화면이 꺼져도 진동으로 알립니다. 외부 사운드 모드는 이 설정과 상관없이 계속 듣고, 그만큼 배터리를 더 씁니다.</p></div></li>
+      <li><button type="button" data-q aria-expanded="false"><i></i>화면 녹화를 시작했더니 꺼졌어요.</button>
+        <div data-a><p>화면 녹화, 화면 공유, 전송은 같은 동의를 쓰고 안드로이드는 한 번에 한 앱만 쓸 수 있게 합니다. 다른 녹화를 시작하면 시각화가 꺼지고, 폰이 세 번 길게 진동하며 다시 켜기 버튼이 있는 알림을 띄웁니다.</p></div></li>
+    </ul>
+  </div>
+  <div class="faq__pane" data-pane aria-live="polite"></div>
+</section>
+
+<section class="sec sec--mid">
+  <h2 class="h-l rise">Windows 버전과 비교</h2>
+  <div class="tbl-wrap rise">{{compare}}</div>
+</section>
