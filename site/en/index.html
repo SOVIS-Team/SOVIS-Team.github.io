@@ -1031,6 +1031,29 @@ body.menu-open{overflow:hidden}
   .nws-list a,.nws-list li:first-child a{padding:16px 0}
 }
 
+/* ---------- 누적 다운로드 ---------- */
+.dlc{padding:0 0 60px;background:#fff}
+.dlc-in{max-width:1480px;margin:0 auto;padding:0 28px}
+.dlc-box{border-top:1px solid #E3E6EC;padding-top:40px}
+.dlc-src{font-size:13.5px;font-weight:600;color:var(--ink-3)}
+.dlc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.dlc-list li+li{border-left:1px solid #E3E6EC}
+.dlc-list .it{display:block;padding:2px 32px 4px}
+.dlc-list li:first-child .it{padding-left:0}
+.dlc-list .k{display:block;margin-bottom:6px;font-size:14.5px;font-weight:700;color:var(--ink-2)}
+.dlc-list b{display:block;white-space:nowrap;font-size:clamp(28px,3.6vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.1;color:var(--ink);font-variant-numeric:tabular-nums}
+.dlc-list b small{margin-left:2px;font-size:.5em;font-weight:700;letter-spacing:0}
+.dlc-list li:first-child b{color:var(--accent)}
+.dlc-list a.it:hover .k{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+@media(max-width:860px){
+  .dlc-box{padding-top:32px}
+  .dlc-list .it{padding:2px 14px 4px}
+}
+@media(max-width:400px){
+  .dlc-list .it{padding:2px 10px 4px}
+  .dlc-list b{font-size:24px}
+}
+
 /* ---------- section tiles ---------- */
 .ptiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));height:clamp(440px,40vw,600px);background:#05070D}
 .pt{position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -1493,6 +1516,17 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
   </div>
 </section>
 
+<section class="dlc" aria-labelledby="dlcH" data-dl-wrap hidden>
+  <div class="dlc-in"><div class="dlc-box">
+    <div class="nws-head"><h2 id="dlcH">Total downloads</h2><span class="dlc-src">From GitHub Releases</span></div>
+    <ul class="dlc-list">
+      <li><div class="it"><span class="k">All</span><b><span data-dl="all">0</span></b></div></li>
+      <li><a class="it" href="#/android"><span class="k">Android</span><b><span data-dl="android">0</span></b></a></li>
+      <li><a class="it" href="#/windows"><span class="k">Windows</span><b><span data-dl="windows">0</span></b></a></li>
+    </ul>
+  </div></div>
+</section>
+
 <section class="ptiles" id="ptiles" aria-label="Explore SOVIS">
   <a class="pt is-on" href="#/about"><span class="pt-img" style="--img:var(--ph-tile-about)" aria-hidden="true"></span><span class="pt-t">About</span><span class="pt-line" aria-hidden="true"></span><span class="pt-s">Our story and values</span></a>
   <a class="pt" href="#/android"><span class="pt-img" style="--img:var(--ph-tile-prod)" aria-hidden="true"></span><span class="pt-t">Products</span><span class="pt-line" aria-hidden="true"></span><span class="pt-s">Android · Windows</span></a>
@@ -1698,7 +1732,7 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download APK<span class="sr"> (opens in a new tab)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>Source code<span class="sr"> (opens in a new tab)</span></a>
       </div>
-      <p class="gs-ver">v1.8.4 · Released 2026.11.11 · Apache 2.0 · <a href="#android-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
+      <p class="gs-ver">v1.8.4 · Released 2026.11.11<span data-dl-wrap hidden> · <span data-dl="android">0</span> downloads</span> · Apache 2.0 · <a href="#android-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
     </div>
   </div>
 </section>
@@ -1932,7 +1966,7 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download ZIP<span class="sr"> (opens in a new tab)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>Source code<span class="sr"> (opens in a new tab)</span></a>
       </div>
-      <p class="gs-ver">v2.1.1 · Released 2026.11.11 · AGPL-3.0 · <a href="#windows-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
+      <p class="gs-ver">v2.1.1 · Released 2026.11.11<span data-dl-wrap hidden> · <span data-dl="windows">0</span> downloads</span> · AGPL-3.0 · <a href="#windows-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
     </div>
   </div>
 </section>
@@ -3576,6 +3610,36 @@ if(cntObserver){
     el.textContent=cntFormat(el,0); cntObserver.observe(el);
   });
 }
+
+/* 누적 다운로드: 두 저장소 릴리스의 APK·ZIP 다운로드 수를 GitHub API 에서 더한다.
+   사이트의 받기 버튼도 릴리스 페이지로 이어지므로, 사이트를 거친 것과 릴리스에서 바로 받은 것이 모두 들어간다.
+   한 시간 동안 브라우저에 담아 두어 API 호출을 줄인다(로그인 없이 시간당 60번 제한). 못 받으면 칸을 숨긴 채로 둔다.
+   릴리스가 100개를 넘으면 페이지를 더 읽도록 고쳐야 한다. */
+(function(){
+  var REPOS={android:"SOVIS-Team/SoundVisualizer-Android",windows:"SOVIS-Team/SoundVisualizer-Windows"}, KEY="sovis-dl", TTL=3600000, cached=null;
+  function show(c){
+    var v={all:c.android+c.windows,android:c.android,windows:c.windows};
+    [].forEach.call(document.querySelectorAll("[data-dl]"), function(el){ el.textContent=v[el.getAttribute("data-dl")].toLocaleString("en-US"); });
+    [].forEach.call(document.querySelectorAll("[data-dl-wrap]"), function(el){ el.hidden=false; });
+  }
+  try{ cached=JSON.parse(localStorage.getItem(KEY)||"null"); }catch(e){}
+  if(cached && typeof cached.android==="number" && Date.now()-cached.t<TTL){ show(cached); return; }
+  if(!window.fetch || !window.Promise){ if(cached) show(cached); return; }
+  function count(repo){
+    return fetch("https://api.github.com/repos/"+repo+"/releases?per_page=100",{headers:{"Accept":"application/vnd.github+json"}})
+      .then(function(r){ if(!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then(function(list){
+        var n=0;
+        list.forEach(function(rel){ (rel.assets||[]).forEach(function(a){ if(/\.(apk|zip)$/i.test(a.name)) n+=a.download_count||0; }); });
+        return n;
+      });
+  }
+  Promise.all([count(REPOS.android), count(REPOS.windows)]).then(function(n){
+    var c={android:n[0],windows:n[1],t:Date.now()};
+    try{ localStorage.setItem(KEY, JSON.stringify(c)); }catch(e){}
+    show(c);
+  }).catch(function(){ if(cached && typeof cached.android==="number") show(cached); });
+})();
 
 /* Page header photos move slower than the text (parallax). */
 var PGBG=[].slice.call(document.querySelectorAll(".pgbg")), pxQueued=false;
