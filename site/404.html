@@ -6,12 +6,15 @@
 <title>SOVIS</title>
 <script>
 (function () {
-  var first = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0].toLowerCase();
-  location.replace('/' + (['about','android','windows','tech','research','news'].indexOf(first) >= 0 ? '#/' + first : ''));
+  var parts = location.pathname.replace(/^\/+|\/+$/g, '').split('/');
+  var base = '/';
+  if (parts[0].toLowerCase() === 'en') { base = '/en/'; parts.shift(); }
+  var first = (parts[0] || '').toLowerCase();
+  location.replace(base + (['about','android','windows','tech','research','news'].indexOf(first) >= 0 ? '#/' + first : ''));
 })();
 </script>
 </head>
 <body>
-<p><a href="/">SOVIS 홈으로 가기</a></p>
+<p><a href="/">SOVIS 홈으로 가기</a> · <a href="/en/" lang="en">Go to the SOVIS home page</a></p>
 </body>
 </html>

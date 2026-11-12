@@ -2,12 +2,40 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
+<script>
+/* 언어 정하기: 저장된 선택, 이 탭에서 정한 언어, 브라우저 언어·시간대 순으로 보고, 이 페이지와 다르면 바로 옮긴다.
+   이 탭에서 정해 들어온 페이지(window.name)는 다시 옮기지 않으므로 두 페이지가 서로 보내는 일이 없다.
+   검색엔진 로봇은 옮기지 않는다(두 언어 페이지를 모두 읽게 한다). */
+(function(){
+  var PAGE="ko", OTHER="/en/";
+  try{
+    if(/bot|crawl|spider|slurp|yeti|daumoa/i.test(navigator.userAgent||"")) return;
+    var tab=(/^sovis-lang:(ko|en)$/.exec(window.name||"")||[])[1]||null;
+    if(tab===PAGE) return;
+    var want=null;
+    try{ want=localStorage.getItem("sovis-lang"); }catch(_){}
+    if(want!=="ko" && want!=="en") want=tab;
+    if(!want){
+      var lang=String((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+      var tz=""; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone || ""; }catch(_){}
+      want=(/^ko(-|$)/.test(lang) || tz==="Asia/Seoul") ? "ko" : "en";
+    }
+    if(want===PAGE) return;
+    window.name="sovis-lang:"+want;
+    location.replace(OTHER+location.search+location.hash);
+  }catch(_){}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SOVIS, 소리를 봅니다</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-124%20-124%20248%20248%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E9ECF4%22%20stop-opacity%3D%220%22%2F%3E%3Cstop%20offset%3D%22.5%22%20stop-color%3D%22%23E9ECF4%22%20stop-opacity%3D%221%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E9ECF4%22%20stop-opacity%3D%220%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%22-124%22%20y%3D%22-124%22%20width%3D%22248%22%20height%3D%22248%22%20rx%3D%2250%22%20fill%3D%22%2314171D%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M100%200A100%20100%200%201%201%20-100%200A100%20100%200%201%201%20100%200Z%22%20stroke%3D%22%23E9ECF4%22%2F%3E%3Cpath%20d%3D%22M17.4%2098.5C15.9%2098.7%2011.6%2099.4%208.7%2099.6C5.8%2099.9%202.9%20100.0%200.0%20100.0C-2.9%20100.0%20-5.8%2099.9%20-8.7%2099.6C-11.6%2099.4%20-14.5%2099.0%20-17.4%2098.5C-20.2%2098.0%20-23.1%2097.3%20-25.9%2096.6C-28.7%2095.8%20-31.5%2095.0%20-34.2%2094.0C-36.9%2093.0%20-39.6%2091.9%20-42.3%2090.6C-44.9%2089.4%20-47.5%2088.1%20-50.0%2086.6C-52.5%2085.2%20-55.0%2083.6%20-57.4%2081.9C-59.7%2080.3%20-62.1%2078.5%20-64.3%2076.6C-66.5%2074.8%20-68.7%2072.8%20-70.8%2070.8C-72.8%2068.7%20-74.8%2066.6%20-76.7%2064.4C-78.7%2062.2%20-80.5%2059.9%20-82.3%2057.6C-84.1%2055.3%20-85.8%2053.0%20-87.6%2050.6C-89.3%2048.2%20-91.0%2045.7%20-92.7%2043.2C-94.4%2040.8%20-96.2%2038.2%20-97.9%2035.6C-99.6%2033.0%20-101.4%2030.4%20-103.0%2027.6C-104.6%2024.8%20-106.3%2021.9%20-107.6%2019.0C-108.9%2016.0%20-110.1%2012.9%20-110.8%209.7C-111.6%206.5%20-112.0%203.2%20-112.0%200.0C-112.0%20-3.2%20-111.6%20-6.5%20-110.8%20-9.7C-110.1%20-12.9%20-108.9%20-16.0%20-107.6%20-19.0C-106.3%20-21.9%20-104.6%20-24.8%20-103.0%20-27.6C-101.4%20-30.4%20-99.6%20-33.0%20-97.9%20-35.6C-96.2%20-38.2%20-94.4%20-40.8%20-92.7%20-43.2C-91.0%20-45.7%20-89.3%20-48.2%20-87.6%20-50.6C-85.8%20-53.0%20-84.1%20-55.3%20-82.3%20-57.6C-80.5%20-59.9%20-78.7%20-62.2%20-76.7%20-64.4C-74.8%20-66.6%20-72.8%20-68.7%20-70.8%20-70.8C-68.7%20-72.8%20-66.5%20-74.8%20-64.3%20-76.6C-62.1%20-78.5%20-59.7%20-80.3%20-57.4%20-81.9C-55.0%20-83.6%20-52.5%20-85.2%20-50.0%20-86.6C-47.5%20-88.1%20-44.9%20-89.4%20-42.3%20-90.6C-39.6%20-91.9%20-36.9%20-93.0%20-34.2%20-94.0C-31.5%20-95.0%20-28.7%20-95.8%20-25.9%20-96.6C-23.1%20-97.3%20-20.2%20-98.0%20-17.4%20-98.5C-14.5%20-99.0%20-11.6%20-99.4%20-8.7%20-99.6C-5.8%20-99.9%20-2.9%20-100.0%20-0.0%20-100.0C2.9%20-100.0%205.8%20-99.9%208.7%20-99.6C11.6%20-99.4%2015.9%20-98.7%2017.4%20-98.5%22%20stroke%3D%22url%28%23g%29%22%2F%3E%3Cpath%20d%3D%22M-17.4%20-98.5C-15.9%20-98.7%20-11.6%20-99.4%20-8.7%20-99.6C-5.8%20-99.9%20-2.9%20-100.0%200.0%20-100.0C2.9%20-100.0%205.8%20-99.9%208.7%20-99.6C11.6%20-99.4%2014.5%20-99.0%2017.4%20-98.5C20.2%20-98.0%2023.1%20-97.3%2025.9%20-96.6C28.7%20-95.8%2031.5%20-95.0%2034.2%20-94.0C36.9%20-93.0%2039.6%20-91.9%2042.3%20-90.6C44.9%20-89.4%2047.5%20-88.1%2050.0%20-86.6C52.5%20-85.2%2055.0%20-83.6%2057.4%20-81.9C59.7%20-80.3%2062.1%20-78.5%2064.3%20-76.6C66.5%20-74.8%2068.7%20-72.8%2070.8%20-70.8C72.8%20-68.7%2074.8%20-66.6%2076.7%20-64.4C78.7%20-62.2%2080.5%20-59.9%2082.3%20-57.6C84.1%20-55.3%2085.8%20-53.0%2087.6%20-50.6C89.3%20-48.2%2091.0%20-45.7%2092.7%20-43.2C94.4%20-40.8%2096.2%20-38.2%2097.9%20-35.6C99.6%20-33.0%20101.4%20-30.4%20103.0%20-27.6C104.6%20-24.8%20106.3%20-21.9%20107.6%20-19.0C108.9%20-16.0%20110.1%20-12.9%20110.8%20-9.7C111.6%20-6.5%20112.0%20-3.2%20112.0%200.0C112.0%203.2%20111.6%206.5%20110.8%209.7C110.1%2012.9%20108.9%2016.0%20107.6%2019.0C106.3%2021.9%20104.6%2024.8%20103.0%2027.6C101.4%2030.4%2099.6%2033.0%2097.9%2035.6C96.2%2038.2%2094.4%2040.8%2092.7%2043.2C91.0%2045.7%2089.3%2048.2%2087.6%2050.6C85.8%2053.0%2084.1%2055.3%2082.3%2057.6C80.5%2059.9%2078.7%2062.2%2076.7%2064.4C74.8%2066.6%2072.8%2068.7%2070.8%2070.8C68.7%2072.8%2066.5%2074.8%2064.3%2076.6C62.1%2078.5%2059.7%2080.3%2057.4%2081.9C55.0%2083.6%2052.5%2085.2%2050.0%2086.6C47.5%2088.1%2044.9%2089.4%2042.3%2090.6C39.6%2091.9%2036.9%2093.0%2034.2%2094.0C31.5%2095.0%2028.7%2095.8%2025.9%2096.6C23.1%2097.3%2020.2%2098.0%2017.4%2098.5C14.5%2099.0%2011.6%2099.4%208.7%2099.6C5.8%2099.9%202.9%20100.0%200.0%20100.0C-2.9%20100.0%20-5.8%2099.9%20-8.7%2099.6C-11.6%2099.4%20-15.9%2098.7%20-17.4%2098.5%22%20stroke%3D%22url%28%23g%29%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <meta name="description" content="SOVIS는 소리의 방향·세기·종류를 보던 화면 위에 그려 보여 주는 SoundVisualizer를 만드는 동국대학교 학생 팀입니다.">
 <link rel="canonical" href="https://sovis-team.github.io/">
+<link rel="alternate" hreflang="ko" href="https://sovis-team.github.io/">
+<link rel="alternate" hreflang="en" href="https://sovis-team.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://sovis-team.github.io/en/">
 <meta property="og:url" content="https://sovis-team.github.io/">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://sovis-team.github.io/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +51,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--photo:url("assets/img/ca5dfff95d3f.jpg")}
+:root{--photo:url("/assets/img/ca5dfff95d3f.jpg")}
 /* ============================================================
    SoundVisualizer / 동작 프로토타입 (SOVIS 사이트의 바탕)
    Theme lock: LIGHT ONLY (의도적 단일 테마)
@@ -726,12 +754,12 @@ body{touch-action:manipulation}
    첫 화면은 SOVIS, 제품 두 개는 메뉴의 '제품'에서 들어가는 페이지입니다.
    ============================================================ */
 [hidden]{display:none !important}
-.wm{display:block;width:68px;height:20px;background:url("assets/img/460149841a2f.png") left center/contain no-repeat}
+.wm{display:block;width:68px;height:20px;background:url("/assets/img/460149841a2f.png") left center/contain no-repeat}
 .footbrand .brand .wm{width:75px;height:22px}
 .appico{display:block;flex:none;background:center/cover no-repeat;
   box-shadow:0 1px 2px rgba(21,25,34,.12),0 4px 12px -6px rgba(21,25,34,.3)}
-.ico-android{background-image:url("assets/img/494ef0412fe6.png")}
-.ico-windows{background-image:url("assets/img/1ac7e264b16d.png")}
+.ico-android{background-image:url("/assets/img/494ef0412fe6.png")}
+.ico-windows{background-image:url("/assets/img/1ac7e264b16d.png")}
 .note a,.ctanote a,.faq .ans a,.timeline a,.inote a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 h1:focus,h1:focus-visible{outline:none}
 
@@ -825,27 +853,27 @@ h1:focus,h1:focus-visible{outline:none}
 .pagenav .next{align-items:flex-end;text-align:right}
 @media(max-width:620px){.pagenav{grid-template-columns:1fr}.pagenav .next{align-items:flex-start;text-align:left}}
 :root{
---ph-band-about:url("assets/img/9ee8caf278ed.webp");
---ph-band-research:url("assets/img/c35ab2643be8.webp");
---ph-band-tech:url("assets/img/e49619232a4e.webp");
---ph-hero-android:url("assets/img/fff527698c1a.webp");
---ph-hero-sovis:url("assets/img/7713e4bee88d.webp");
---ph-hero-windows:url("assets/img/4d3009d28f82.webp");
---ph-scr-pc:url("assets/img/1a10b81ac2c4.webp");
---ph-scr-phone:url("assets/img/64f0500c98d7.webp");
---ph-story-ext:url("assets/img/8308e4208608.webp");
---ph-story-research:url("assets/img/5015fc61a7f3.webp");
---ph-story-tech:url("assets/img/2c645743d5d4.webp");
---ph-tile-about:url("assets/img/da07b33cd257.webp");
---ph-tile-news:url("assets/img/3b9a78d9b3e3.webp");
---ph-tile-prod:url("assets/img/7ec781492816.webp");
---ph-tile-research:url("assets/img/4fe86e0042f7.webp");
---ph-tile-tech:url("assets/img/ab881b3ff14a.webp");
---ph-val-1:url("assets/img/aec70e3fb37a.webp");
---ph-val-2:url("assets/img/98099bd90892.webp");
---ph-val-3:url("assets/img/92feb3506af8.webp");
---ph-who-1:url("assets/img/86e6f4ea3c6c.webp");
---ph-who-3:url("assets/img/0d1756961e79.webp");
+--ph-band-about:url("/assets/img/9ee8caf278ed.webp");
+--ph-band-research:url("/assets/img/c35ab2643be8.webp");
+--ph-band-tech:url("/assets/img/e49619232a4e.webp");
+--ph-hero-android:url("/assets/img/fff527698c1a.webp");
+--ph-hero-sovis:url("/assets/img/7713e4bee88d.webp");
+--ph-hero-windows:url("/assets/img/4d3009d28f82.webp");
+--ph-scr-pc:url("/assets/img/1a10b81ac2c4.webp");
+--ph-scr-phone:url("/assets/img/64f0500c98d7.webp");
+--ph-story-ext:url("/assets/img/8308e4208608.webp");
+--ph-story-research:url("/assets/img/5015fc61a7f3.webp");
+--ph-story-tech:url("/assets/img/2c645743d5d4.webp");
+--ph-tile-about:url("/assets/img/da07b33cd257.webp");
+--ph-tile-news:url("/assets/img/3b9a78d9b3e3.webp");
+--ph-tile-prod:url("/assets/img/7ec781492816.webp");
+--ph-tile-research:url("/assets/img/4fe86e0042f7.webp");
+--ph-tile-tech:url("/assets/img/ab881b3ff14a.webp");
+--ph-val-1:url("/assets/img/aec70e3fb37a.webp");
+--ph-val-2:url("/assets/img/98099bd90892.webp");
+--ph-val-3:url("/assets/img/92feb3506af8.webp");
+--ph-who-1:url("/assets/img/86e6f4ea3c6c.webp");
+--ph-who-3:url("/assets/img/0d1756961e79.webp");
 }
 
 /* ============================================================
@@ -892,6 +920,10 @@ body.view-home main{padding-top:0}
 .util a{color:inherit}
 .util a:hover{text-decoration:underline;text-underline-offset:4px}
 .util i{display:block;width:1px;height:10px;background:currentColor;opacity:.35}
+.util .lang{display:inline-flex;align-items:center;gap:5px}
+.util .lang svg,.mm-lang svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.mm-lang{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:12px;padding:10px 0;font-size:15px;font-weight:700;color:var(--ink-2)}
+.mm-lang svg{width:17px;height:17px}
 .burger{display:none;width:44px;height:44px;flex-direction:column;align-items:center;justify-content:center;gap:6px;border-radius:10px}
 .burger span{display:block;width:22px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,background .25s}
 .burger[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
@@ -918,6 +950,13 @@ body.menu-open{overflow:hidden}
 .mm-util{display:flex;gap:10px;margin-top:24px}
 .mm-util .btn{flex:1}
 @media(min-width:961px){.mmenu,.mmenu.open{display:none}}
+/* 영어 메뉴는 글이 길어 머리글 오른쪽 링크와 겹치므로, 영어 페이지만 더 넓은 화면부터 메뉴 버튼으로 바꿉니다. */
+@media(max-width:1100px){
+  html[lang="en"] .gnbnav,html[lang="en"] .util{display:none}
+  html[lang="en"] .burger{display:flex}
+  html[lang="en"] .gnb-in{padding:0 14px 0 18px}
+  html[lang="en"] .mmenu.open{display:block}
+}
 
 /* ---------- 첫 화면 슬라이드 ---------- */
 .mv{position:relative;height:max(580px,min(90vh,900px));overflow:hidden;background:#03050B;color:#fff;isolation:isolate}
@@ -1381,7 +1420,7 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
         </li>
       </ul>
     </nav>
-    <div class="util"><a href="#/android">앱 받기</a><i aria-hidden="true"></i><a href="#contact">문의</a></div>
+    <div class="util"><a href="#/android">앱 받기</a><i aria-hidden="true"></i><a href="#contact">문의</a><i aria-hidden="true"></i><a class="lang" href="/en/" hreflang="en" data-lang="en"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 3 2.6 15 0 18"/><path d="M12 3c-2.6 3-2.6 15 0 18"/></svg><span class="sr">언어: </span><span lang="en">English</span></a></div>
     <button class="burger" id="navToggle" type="button" aria-expanded="false" aria-controls="navmenu" aria-label="메뉴 열기"><span></span><span></span></button>
   </div>
   <div class="megabg" aria-hidden="true"></div>
@@ -1395,6 +1434,7 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
     <div class="mm-g"><a href="#/research">검증</a><ul><li><a href="#tests">사용자 테스트</a></li><li><a href="#field">당사자 실증</a></li></ul></div>
     <div class="mm-g"><a href="#/news">소식</a><ul><li><a href="#/news">전체 소식</a></li><li><a href="#/news/release">릴리스</a></li><li><a href="#/news/award">수상·대회</a></li><li><a href="#/news/research">검증</a></li></ul></div>
     <div class="mm-util"><a class="btn btn-primary btn-sm" href="#/android">앱 받기</a><a class="btn btn-ghost btn-sm" href="#contact">문의</a></div>
+    <a class="mm-lang" href="/en/" hreflang="en" data-lang="en"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 3 2.6 15 0 18"/><path d="M12 3c-2.6 3-2.6 15 0 18"/></svg><span class="sr">언어: </span><span lang="en">English</span></a>
   </nav>
 </div>
 
@@ -1669,11 +1709,11 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
     <div class="shots phone center">
       <p class="sr">휴대폰 화면 테두리에 그려진 다섯 장면입니다. 소리 종류에 따라 색이 달라지고, 소리가 나는 쪽 테두리가 더 크게 그려집니다.</p>
       <ul data-stagger>
-        <li class="rv"><img src="assets/img/6d6492674dca.webp" alt="" width="227" height="506" decoding="async"><span><i class="k0"></i>환경음</span></li>
-        <li class="rv"><img src="assets/img/79ae070eb33d.webp" alt="" width="227" height="506" decoding="async"><span><i class="k1"></i>사람 소리</span></li>
-        <li class="rv"><img src="assets/img/2d8ef0424d90.webp" alt="" width="227" height="506" decoding="async"><span><i class="k2"></i>위협음</span></li>
-        <li class="rv"><img src="assets/img/bb03019905fc.webp" alt="" width="227" height="506" decoding="async"><span>← 왼쪽</span></li>
-        <li class="rv"><img src="assets/img/10943ad05b65.webp" alt="" width="227" height="506" decoding="async"><span>오른쪽 →</span></li>
+        <li class="rv"><img src="/assets/img/6d6492674dca.webp" alt="" width="227" height="506" decoding="async"><span><i class="k0"></i>환경음</span></li>
+        <li class="rv"><img src="/assets/img/79ae070eb33d.webp" alt="" width="227" height="506" decoding="async"><span><i class="k1"></i>사람 소리</span></li>
+        <li class="rv"><img src="/assets/img/2d8ef0424d90.webp" alt="" width="227" height="506" decoding="async"><span><i class="k2"></i>위협음</span></li>
+        <li class="rv"><img src="/assets/img/bb03019905fc.webp" alt="" width="227" height="506" decoding="async"><span>← 왼쪽</span></li>
+        <li class="rv"><img src="/assets/img/10943ad05b65.webp" alt="" width="227" height="506" decoding="async"><span>오른쪽 →</span></li>
       </ul>
     </div>
     <div class="story-gap"></div>
@@ -1903,11 +1943,11 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
     <div class="shots pc center">
       <p class="sr">컴퓨터 화면 가장자리에 그려진 다섯 장면입니다. 소리 종류에 따라 색이 달라지고, 소리가 나는 쪽 가장자리가 더 크게 그려집니다.</p>
       <ul data-stagger>
-        <li class="rv"><img src="assets/img/e53595ce35d3.webp" alt="" width="446" height="250" decoding="async"><span><i class="k0"></i>환경음</span></li>
-        <li class="rv"><img src="assets/img/4824415a1150.webp" alt="" width="446" height="250" decoding="async"><span><i class="k1"></i>사람 소리</span></li>
-        <li class="rv"><img src="assets/img/526c09019d28.webp" alt="" width="446" height="250" decoding="async"><span><i class="k2"></i>위협음</span></li>
-        <li class="rv"><img src="assets/img/b8cb6d8fdaa3.webp" alt="" width="446" height="250" decoding="async"><span>← 왼쪽</span></li>
-        <li class="rv"><img src="assets/img/f70a14af18af.webp" alt="" width="446" height="250" decoding="async"><span>오른쪽 →</span></li>
+        <li class="rv"><img src="/assets/img/e53595ce35d3.webp" alt="" width="446" height="250" decoding="async"><span><i class="k0"></i>환경음</span></li>
+        <li class="rv"><img src="/assets/img/4824415a1150.webp" alt="" width="446" height="250" decoding="async"><span><i class="k1"></i>사람 소리</span></li>
+        <li class="rv"><img src="/assets/img/526c09019d28.webp" alt="" width="446" height="250" decoding="async"><span><i class="k2"></i>위협음</span></li>
+        <li class="rv"><img src="/assets/img/b8cb6d8fdaa3.webp" alt="" width="446" height="250" decoding="async"><span>← 왼쪽</span></li>
+        <li class="rv"><img src="/assets/img/f70a14af18af.webp" alt="" width="446" height="250" decoding="async"><span>오른쪽 →</span></li>
       </ul>
     </div>
     <div class="story-gap"></div>
@@ -3485,7 +3525,7 @@ document.addEventListener("keydown", function(e){
   }
   closeNav(true);
 });
-window.addEventListener("resize", function(){ if(window.innerWidth>960) closeNav(false); });
+window.addEventListener("resize", function(){ if(getComputedStyle(navToggle).display==="none") closeNav(false); });
 
 /* ============================================================
    11. 등장 효과의 순서와 숫자 올라가기
@@ -3508,6 +3548,8 @@ document.addEventListener("transitionend", function(e){
 
 function cntFormat(el,v){
   var d=(el.getAttribute("data-to").split(".")[1]||"").length;
+  // 1000 이 넘는 정수는 쉼표를 넣어 센다(영어 페이지의 440,000). 한국어 페이지의 수는 모두 1000 아래다.
+  if(d===0 && parseFloat(el.getAttribute("data-to"))>=1000) return Math.round(v).toLocaleString("en-US");
   return v.toFixed(d);
 }
 function runCount(el){
@@ -3925,6 +3967,21 @@ if(copyMail){
     } else copyFallback();
   });
 }
+
+/* ============================================================
+   18. 언어 바꾸기
+       누르면 선택을 저장하고, 지금 보는 화면(# 주소)을 다른 언어 페이지에서 그대로 엽니다.
+   ============================================================ */
+[].forEach.call(document.querySelectorAll("a[data-lang]"), function(a){
+  a.addEventListener("click", function(e){
+    var lang=a.getAttribute("data-lang");
+    try{ localStorage.setItem("sovis-lang", lang); }catch(_){}
+    if(e.button!==0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    try{ window.name="sovis-lang:"+lang; }catch(_){}
+    location.href=a.getAttribute("href").split("#")[0]+location.hash;
+  });
+});
 
 /* 본문으로 건너뛰기: 주소를 바꾸지 않고 지금 페이지의 제목으로 갑니다. */
 var skipLink=document.querySelector(".skip");
