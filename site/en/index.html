@@ -1236,6 +1236,11 @@ body.menu-open{overflow:hidden}
 .gs-btns svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .gs-ver{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.7)}
 .gs-ver a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.gs-dl{margin:36px auto 0;max-width:420px;display:flex;align-items:baseline;justify-content:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);border-bottom:0;color:#fff}
+.gs-dl .k{font-size:15.5px;font-weight:700;color:#C3CEFF}
+.gs-dl b{font-size:34px;font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.gs-dl b small{margin-left:2px;font-size:.5em;font-weight:700;letter-spacing:0}
+.gs-dl+.gs-btns{margin-top:0}
 .gs :focus-visible{outline-color:#fff}
 @media(max-width:1180px){.gs-in{padding:56px 40px 56px 190px}}
 @media(max-width:960px){
@@ -1516,13 +1521,13 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
   </div>
 </section>
 
-<section class="dlc" aria-labelledby="dlcH" data-dl-wrap hidden>
+<section class="dlc" aria-labelledby="dlcH" data-dl-wrap>
   <div class="dlc-in"><div class="dlc-box">
     <div class="nws-head"><h2 id="dlcH">Total downloads</h2><span class="dlc-src">From GitHub Releases</span></div>
     <ul class="dlc-list">
-      <li><div class="it"><span class="k">All</span><b><span data-dl="all">0</span></b></div></li>
-      <li><a class="it" href="#/android"><span class="k">Android</span><b><span data-dl="android">0</span></b></a></li>
-      <li><a class="it" href="#/windows"><span class="k">Windows</span><b><span data-dl="windows">0</span></b></a></li>
+      <li><div class="it"><span class="k">All</span><b><span data-dl="all">159</span></b></div></li>
+      <li><a class="it" href="#/android"><span class="k">Android</span><b><span data-dl="android">101</span></b></a></li>
+      <li><a class="it" href="#/windows"><span class="k">Windows</span><b><span data-dl="windows">58</span></b></a></li>
     </ul>
   </div></div>
 </section>
@@ -1728,11 +1733,12 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
       <p class="gs-meta"><span>Phone app</span><span>Android 10 or later</span></p>
       <p class="gs-desc">Draws the sound playing on your phone, from videos, music, games and more, around the edge of the screen, and gives each sound type its own vibration. Turn on External sound mode and it also listens to the sounds around you through the microphone.</p>
       <ul class="gs-checks"><li>Vibration alerts</li><li>External sound mode</li><li>18 languages</li></ul>
+      <p class="gs-dl" data-dl-wrap><span class="k">Downloads so far</span><b><span data-dl="android">101</span></b></p>
       <div class="gs-btns">
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download APK<span class="sr"> (opens in a new tab)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>Source code<span class="sr"> (opens in a new tab)</span></a>
       </div>
-      <p class="gs-ver">v1.8.4 · Released 2026.11.11<span data-dl-wrap hidden> · <span data-dl="android">0</span> downloads</span> · Apache 2.0 · <a href="#android-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
+      <p class="gs-ver">v1.8.4 · Released 2026.11.11 · Apache 2.0 · <a href="#android-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
     </div>
   </div>
 </section>
@@ -1962,11 +1968,12 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
       <p class="gs-meta"><span>Computer app</span><span>Windows 10/11, 64-bit</span></p>
       <p class="gs-desc">Captures all the sound playing on your computer and draws its direction on the screen, from stereo up to 7.1 channels. No installation: unzip it and run.</p>
       <ul class="gs-checks"><li>7.1-channel direction</li><li>Runs without installing</li><li>Screen reader support</li></ul>
+      <p class="gs-dl" data-dl-wrap><span class="k">Downloads so far</span><b><span data-dl="windows">58</span></b></p>
       <div class="gs-btns">
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>Download ZIP<span class="sr"> (opens in a new tab)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>Source code<span class="sr"> (opens in a new tab)</span></a>
       </div>
-      <p class="gs-ver">v2.1.1 · Released 2026.11.11<span data-dl-wrap hidden> · <span data-dl="windows">0</span> downloads</span> · AGPL-3.0 · <a href="#windows-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
+      <p class="gs-ver">v2.1.1 · Released 2026.11.11 · AGPL-3.0 · <a href="#windows-install">How to install</a> · <a href="#demo">Try the demo</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">Intro video<span class="sr"> (opens in a new tab)</span></a></p>
     </div>
   </div>
 </section>
@@ -3611,10 +3618,11 @@ if(cntObserver){
   });
 }
 
-/* 누적 다운로드: 두 저장소 릴리스의 APK·ZIP 다운로드 수를 GitHub API 에서 더한다.
+/* 누적 다운로드: 두 저장소 릴리스의 APK·ZIP 다운로드 수의 합.
    사이트의 받기 버튼도 릴리스 페이지로 이어지므로, 사이트를 거친 것과 릴리스에서 바로 받은 것이 모두 들어간다.
-   한 시간 동안 브라우저에 담아 두어 API 호출을 줄인다(로그인 없이 시간당 60번 제한). 못 받으면 칸을 숨긴 채로 둔다.
-   릴리스가 100개를 넘으면 페이지를 더 읽도록 고쳐야 한다. */
+   숫자는 배포할 때(sovis-web/tools/download_counts.py) HTML 에 미리 들어가므로 GitHub 에 못 닿아도 보인다.
+   여기서는 GitHub API(로그인 없이 시간당 60번)로 새 값을 받아 바꾼다. 못 받으면 지난 값이나 미리 넣은 값을 그대로 둔다.
+   한 시간 동안 브라우저에 담아 둔다. GitHub API 쪽은 릴리스가 100개를 넘으면 페이지를 더 읽도록 고쳐야 한다. */
 (function(){
   var REPOS={android:"SOVIS-Team/SoundVisualizer-Android",windows:"SOVIS-Team/SoundVisualizer-Windows"}, KEY="sovis-dl", TTL=3600000, cached=null;
   function show(c){

@@ -1236,6 +1236,11 @@ body.menu-open{overflow:hidden}
 .gs-btns svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .gs-ver{margin-top:18px;font-size:13.5px;color:rgba(255,255,255,.7)}
 .gs-ver a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.gs-dl{margin:36px auto 0;max-width:420px;display:flex;align-items:baseline;justify-content:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.55);border-bottom:0;color:#fff}
+.gs-dl .k{font-size:15.5px;font-weight:700;color:#C3CEFF}
+.gs-dl b{font-size:34px;font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.gs-dl b small{margin-left:2px;font-size:.5em;font-weight:700;letter-spacing:0}
+.gs-dl+.gs-btns{margin-top:0}
 .gs :focus-visible{outline-color:#fff}
 @media(max-width:1180px){.gs-in{padding:56px 40px 56px 190px}}
 @media(max-width:960px){
@@ -1516,13 +1521,13 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
   </div>
 </section>
 
-<section class="dlc" aria-labelledby="dlcH" data-dl-wrap hidden>
+<section class="dlc" aria-labelledby="dlcH" data-dl-wrap>
   <div class="dlc-in"><div class="dlc-box">
     <div class="nws-head"><h2 id="dlcH">누적 다운로드</h2><span class="dlc-src">GitHub Releases 기준</span></div>
     <ul class="dlc-list">
-      <li><div class="it"><span class="k">전체</span><b><span data-dl="all">0</span><small>회</small></b></div></li>
-      <li><a class="it" href="#/android"><span class="k">Android</span><b><span data-dl="android">0</span><small>회</small></b></a></li>
-      <li><a class="it" href="#/windows"><span class="k">Windows</span><b><span data-dl="windows">0</span><small>회</small></b></a></li>
+      <li><div class="it"><span class="k">전체</span><b><span data-dl="all">159</span><small>회</small></b></div></li>
+      <li><a class="it" href="#/android"><span class="k">Android</span><b><span data-dl="android">101</span><small>회</small></b></a></li>
+      <li><a class="it" href="#/windows"><span class="k">Windows</span><b><span data-dl="windows">58</span><small>회</small></b></a></li>
     </ul>
   </div></div>
 </section>
@@ -1728,11 +1733,12 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
       <p class="gs-meta"><span>휴대폰 앱</span><span>Android 10 이상</span></p>
       <p class="gs-desc">영상, 음악, 게임 등 휴대폰에서 재생되는 소리를 화면 테두리에 그리고, 소리 종류마다 다른 진동으로도 알립니다. 외부 사운드 모드를 켜면 마이크로 주변 소리도 듣습니다.</p>
       <ul class="gs-checks"><li>진동 알림</li><li>외부 사운드 모드</li><li>18개 언어</li></ul>
+      <p class="gs-dl" data-dl-wrap><span class="k">누적 다운로드</span><b><span data-dl="android">101</span><small>회</small></b></p>
       <div class="gs-btns">
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>APK 받기<span class="sr"> (새 창)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Android" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>소스 코드<span class="sr"> (새 창)</span></a>
       </div>
-      <p class="gs-ver">v1.8.4 · 2026.11.11 공개<span data-dl-wrap hidden> · 누적 다운로드 <span data-dl="android">0</span>회</span> · Apache 2.0 · <a href="#android-install">설치 방법</a> · <a href="#demo">데모 체험</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">소개 영상<span class="sr"> (새 창)</span></a></p>
+      <p class="gs-ver">v1.8.4 · 2026.11.11 공개 · Apache 2.0 · <a href="#android-install">설치 방법</a> · <a href="#demo">데모 체험</a> · <a href="https://www.youtube.com/watch?v=Rl8BLXjoTv4" target="_blank" rel="noopener">소개 영상<span class="sr"> (새 창)</span></a></p>
     </div>
   </div>
 </section>
@@ -1962,11 +1968,12 @@ input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:6
       <p class="gs-meta"><span>컴퓨터 앱</span><span>Windows 10/11 64비트</span></p>
       <p class="gs-desc">컴퓨터에서 재생되는 모든 소리를 받아, 스테레오부터 7.1 채널까지 소리의 방향을 화면 위에 그립니다. 설치 없이 압축을 풀고 바로 실행합니다.</p>
       <ul class="gs-checks"><li>7.1 채널 방향</li><li>설치 없이 실행</li><li>화면 읽어주기 지원</li></ul>
+      <p class="gs-dl" data-dl-wrap><span class="k">누적 다운로드</span><b><span data-dl="windows">58</span><small>회</small></b></p>
       <div class="gs-btns">
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows/releases/latest" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>ZIP 받기<span class="sr"> (새 창)</span></a>
         <a href="https://github.com/SOVIS-Team/SoundVisualizer-Windows" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13.5 5-3 14"/></svg>소스 코드<span class="sr"> (새 창)</span></a>
       </div>
-      <p class="gs-ver">v2.1.1 · 2026.11.11 공개<span data-dl-wrap hidden> · 누적 다운로드 <span data-dl="windows">0</span>회</span> · AGPL-3.0 · <a href="#windows-install">설치 방법</a> · <a href="#demo">데모 체험</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">소개 영상<span class="sr"> (새 창)</span></a></p>
+      <p class="gs-ver">v2.1.1 · 2026.11.11 공개 · AGPL-3.0 · <a href="#windows-install">설치 방법</a> · <a href="#demo">데모 체험</a> · <a href="https://www.youtube.com/watch?v=NBRV5AWpb38" target="_blank" rel="noopener">소개 영상<span class="sr"> (새 창)</span></a></p>
     </div>
   </div>
 </section>
@@ -3611,10 +3618,11 @@ if(cntObserver){
   });
 }
 
-/* 누적 다운로드: 두 저장소 릴리스의 APK·ZIP 다운로드 수를 GitHub API 에서 더한다.
+/* 누적 다운로드: 두 저장소 릴리스의 APK·ZIP 다운로드 수의 합.
    사이트의 받기 버튼도 릴리스 페이지로 이어지므로, 사이트를 거친 것과 릴리스에서 바로 받은 것이 모두 들어간다.
-   한 시간 동안 브라우저에 담아 두어 API 호출을 줄인다(로그인 없이 시간당 60번 제한). 못 받으면 칸을 숨긴 채로 둔다.
-   릴리스가 100개를 넘으면 페이지를 더 읽도록 고쳐야 한다. */
+   숫자는 배포할 때(sovis-web/tools/download_counts.py) HTML 에 미리 들어가므로 GitHub 에 못 닿아도 보인다.
+   여기서는 GitHub API(로그인 없이 시간당 60번)로 새 값을 받아 바꾼다. 못 받으면 지난 값이나 미리 넣은 값을 그대로 둔다.
+   한 시간 동안 브라우저에 담아 둔다. GitHub API 쪽은 릴리스가 100개를 넘으면 페이지를 더 읽도록 고쳐야 한다. */
 (function(){
   var REPOS={android:"SOVIS-Team/SoundVisualizer-Android",windows:"SOVIS-Team/SoundVisualizer-Windows"}, KEY="sovis-dl", TTL=3600000, cached=null;
   function show(c){
