@@ -114,6 +114,9 @@ open(os.path.join(OUT, '404.html'), 'w', encoding='utf8').write(f'''<!doctype ht
 </html>
 ''')
 open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf8').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n')
+# IndexNow 확인 파일: 네이버·빙 등에 새 주소를 알릴 때(api.indexnow.org) 이 사이트의 것임을 보이는 키다. 비밀이 아니다.
+INDEXNOW_KEY = '76cb548c239ce1ffb8a956de1aad218c'
+open(os.path.join(OUT, f'{INDEXNOW_KEY}.txt'), 'w', encoding='utf8').write(INDEXNOW_KEY)
 
 links = ''.join(f'    <xhtml:link rel="alternate" hreflang="{h}" href="{u}"/>\n'
                 for h, u in (('ko', SITE), ('en', SITE + 'en/'), ('x-default', SITE + 'en/')))
