@@ -117,6 +117,9 @@ open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf8').write(f'User-agent: 
 # IndexNow 확인 파일: 네이버·빙 등에 새 주소를 알릴 때(api.indexnow.org) 이 사이트의 것임을 보이는 키다. 비밀이 아니다.
 INDEXNOW_KEY = '76cb548c239ce1ffb8a956de1aad218c'
 open(os.path.join(OUT, f'{INDEXNOW_KEY}.txt'), 'w', encoding='utf8').write(INDEXNOW_KEY)
+# Google Search Console 소유 확인 파일(nawwhod@gmail.com 계정의 https://sovis-team.github.io/ 속성). 지우면 확인이 풀린다.
+GOOGLE_VERIFY = 'google6f32ed8ff5ee74bb.html'
+open(os.path.join(OUT, GOOGLE_VERIFY), 'w', encoding='utf8').write(f'google-site-verification: {GOOGLE_VERIFY}')
 
 links = ''.join(f'    <xhtml:link rel="alternate" hreflang="{h}" href="{u}"/>\n'
                 for h, u in (('ko', SITE), ('en', SITE + 'en/'), ('x-default', SITE + 'en/')))
